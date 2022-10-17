@@ -17,12 +17,12 @@ const dylanSmile = new Image();
 dylanSmile.src = "images/dylan1.png";
 const meteor1 = new Image();
 meteor1.src = "images/meteorGrey_big1.png";
-let meteor1Y = 200;
 
 const meteor1Arr = [
-    { x: 275, y: -200, img: meteor1 },
-    { x: 75, y: -800, img: meteor1 },
-    { x: 275, y: -1200, img: meteor1 },
+    { x: Math.floor(Math.random() * 620) + 50, y: -120, img: meteor1 },
+    { x: Math.floor(Math.random() * 620) + 50, y: -470, img: meteor1 },
+    { x: Math.floor(Math.random() * 620) + 50, y: -820, img: meteor1 },
+    { x: Math.floor(Math.random() * 620) + 50, y: -1170, img: meteor1 },
 ]
 
 //add song
@@ -45,9 +45,9 @@ window.onload = () => {
         ctx.drawImage(dylanSmile, bedX + (bed.width/27), bedY, bed.width * 0.055, bed.height * 0.07)
 //        ctx.drawImage(meteor1, 275, 275, 75, 75);
         gameId = requestAnimationFrame(startGame);
-        if (moveRight === true) {
+        if (moveRight === true && bedX < canvasWidth * 0.9) {
             bedX += canvasWidth * 0.01;
-          } else if (moveLeft === true) {
+          } else if (moveLeft === true && bedX > 0) {
             bedX -= canvasWidth * 0.01;
           }
         
@@ -55,6 +55,7 @@ window.onload = () => {
     //ctx.drawImage(trafficCar1, 275, trafficCar1_Y, 100, 150);
     //move the traffic car
     //trafficCar1_Y += 3;
+    
         for (let i = 0; i < meteor1Arr.length; i += 1) {
             let current = meteor1Arr[i];
             ctx.drawImage(current.img, current.x, current.y, 100, 100);
