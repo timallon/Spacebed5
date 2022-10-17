@@ -17,12 +17,16 @@ const dylanSmile = new Image();
 dylanSmile.src = "images/dylan1.png";
 const meteor1 = new Image();
 meteor1.src = "images/meteorGrey_big1.png";
+const alien = new Image();
+alien.src = "images/alien.png";
 
 const meteor1Arr = [
     { x: Math.floor(Math.random() * 620) + 50, y: -120, img: meteor1 },
     { x: Math.floor(Math.random() * 620) + 50, y: -470, img: meteor1 },
-    { x: Math.floor(Math.random() * 620) + 50, y: -820, img: meteor1 },
+    { x: Math.floor(Math.random() * 620) + 50, y: -820, img: alien },
     { x: Math.floor(Math.random() * 620) + 50, y: -1170, img: meteor1 },
+    
+    
 ]
 
 //add song
