@@ -23,12 +23,13 @@ alien.src = "images/alien.png";
 const bedWidth = bed.width;
 const bedHeight = bed.height * 0.07;
 let score = 0;
+let point = 0;
 
 const meteor1Arr = [
-    { x: Math.floor(Math.random() * 660) + 20, y: -120 , img: meteor1 },
-    { x: Math.floor(Math.random() * 660) + 20, y: -470, img: meteor1 },
-    { x: Math.floor(Math.random() * 660) + 20, y: -820, img: meteor1 },
-    { x: Math.floor(Math.random() * 660) + 20, y: -1170, img: meteor1 },
+    { x: Math.floor(Math.random() * 660) + 1, y: -120 , img: meteor1 },
+    { x: Math.floor(Math.random() * 660) + 1, y: -470, img: meteor1 },
+    { x: Math.floor(Math.random() * 660) + 1, y: -820, img: meteor1 },
+    { x: Math.floor(Math.random() * 660) + 1, y: -1170, img: meteor1 },
     
     
 ]
@@ -53,6 +54,7 @@ window.onload = () => {
         ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
         ctx.drawImage(bed, bedX, bedY, canvasWidth * 0.1, canvasHeight * 0.1);
         ctx.drawImage(dylanSmile, bedX + (bed.width/18), bedY, bed.width * 0.055, bedHeight)
+
         gameId = requestAnimationFrame(startGame);
         if (isGameOver === true) {
             cancelAnimationFrame(gameId)
@@ -68,10 +70,12 @@ window.onload = () => {
         for (let i = 0; i < meteor1Arr.length; i += 1) {
             let current = meteor1Arr[i];
             ctx.drawImage(current.img, current.x, current.y, 100, 100);
-            current.y += 3;
+            current.y += 5 + score/50;
             if (current.y > canvas.height) {
-            current.y = -300; current.x = random()
+            current.y = -300; current.x = random(); score += 10;
+            console.log(score)
             }
+       
             if (
 				current.y + 83 > bedY &&
                 current.x + 80 > bedX &&
@@ -80,13 +84,12 @@ window.onload = () => {
 
               ) {
                 isGameOver = true;} else {
-                    score += 0.01
                 }
             /*if (current.y % 30 === 0) {
                 console.log("meteor test")
             }*/
         }
-        console.log(score)
+        
             /*let meteor1Y = meteor1Arr.forEach(element => element.y);
             console.log(meteor1Y)*/
 
