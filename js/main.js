@@ -24,6 +24,7 @@ const bedWidth = bed.width;
 const bedHeight = bed.height * 0.07;
 let score = 0;
 let point = 0;
+let speedRatio = 0
 
 const meteor1Arr = [
     { x: Math.floor(Math.random() * 660) + 1, y: -120 , img: meteor1 },
@@ -38,22 +39,26 @@ const meteor1Arr = [
 //const song = new Audio("audio/deedee.mp3");
 //song.volume = 0.5;
 
+
+
 //variables
 function random() {
     return Math.floor(Math.random() * 660) + 20
 }
 
 window.onload = () => {
-//    ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
-//    document.getElementById('start-button').onclick = () => {
+    ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
+    document.getElementById('start-button').onclick = () => {
       startGame();
-//    }
+    }
 
     function startGame() {
         startScreen.style.display = "none";
         ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
         ctx.drawImage(bed, bedX, bedY, canvasWidth * 0.1, canvasHeight * 0.1);
+        
         ctx.drawImage(dylanSmile, bedX + (bed.width/18), bedY, bed.width * 0.055, bedHeight)
+        
 
         gameId = requestAnimationFrame(startGame);
         if (isGameOver === true) {
@@ -61,19 +66,24 @@ window.onload = () => {
         }
         //console.log(gameId)
         if (moveRight === true && bedX < canvasWidth * 0.9) {
-            bedX += canvasWidth * 0.01;
+            bedX += canvasWidth * 0.01 * (1 + score/3000);
           } else if (moveLeft === true && bedX > 0) {
-            bedX -= canvasWidth * 0.01;
+            bedX -= canvasWidth * 0.01 * (1 + score/3000);
           }
         
     
         for (let i = 0; i < meteor1Arr.length; i += 1) {
             let current = meteor1Arr[i];
+            ctx.font = '48px ArcadeClassic';
+            ctx.fillStyle = 'red';
+            ctx.fillText(`Score: ${score}`, 50, 50);
             ctx.drawImage(current.img, current.x, current.y, 100, 100);
-            current.y += 5 + score/50;
+            current.y += 4 + score/100;
             if (current.y > canvas.height) {
             current.y = -300; current.x = random(); score += 10;
+            
             console.log(score)
+            //song.playbackRate= 1 + score/10000
             }
        
             if (
@@ -101,7 +111,7 @@ window.onload = () => {
           }*/
 
     
-//    song.play(); 
+    //song.play(); 
     }
     // 
     document.addEventListener("keydown", (event) => {
