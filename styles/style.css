@@ -13,23 +13,26 @@ canvas {
 
   .game-over {
     display: none;
+    
   }
 
     .game-intro, .game-over {
 
-    display: flex;
-    background-image: url('images/background.png');
+    
+    background-image: url("../images/background.png");
     background-size:cover;
     align-items: center;
     text-align: center; 
     font-size: 3em;
     font-family: 'ArcadeClassic', sans-serif;
+    src: url("../fonts/ARCADECLASSIC.TTF");
     word-spacing: 5px;
     color: #A8B6FF;
     height: 100%;
     width: 100%;
     justify-content: center;
     flex-direction: column;
+    
   }
 
 
@@ -48,8 +51,8 @@ canvas {
     font-family: 'ArcadeClassic', sans-serif;
     color: #042227;
     background-color: #A8B6FF;
-    border-radius: 20px;
-    box-shadow: 4px 4px 5px black;
+    border-radius: 50px;
+    box-shadow: 4px 4px 5px #A8B6FF;
     
 
 

@@ -28,6 +28,10 @@ const bedHeight = bed.height * 0.07;
 let score = 0;
 let point = 0;
 let speedRatio = 0
+// delay function:
+let delayInMilliseconds = 100; //0.1 second
+
+
 
 function muteAll() {song.pause(); crashNoise.pause(); pointNoise.pause()}
 
@@ -86,10 +90,9 @@ window.onload = () => {
       startScreen.style.display = "none";
       ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
       ctx.drawImage(bed, bedX, bedY, canvasWidth * 0.1, canvasHeight * 0.1);
-      
       ctx.drawImage(dylanSmile, bedX + (bed.width/18), bedY, bed.width * 0.055, bedHeight)
       
-    
+      
       gameId = requestAnimationFrame(startGame);
       if (isGameOver === true) {
           cancelAnimationFrame(gameId);
