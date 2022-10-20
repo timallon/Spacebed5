@@ -10,10 +10,12 @@
   </head>
   <body>
     <div class="game-intro">
-      <h1 class="title">Asteroid Explosion</h1>
+      <h1 class="title">Spacebed</h1>
       <br />
-      <button id="start-button">Start Game</button>
-      <p>Move the bed using the left and right arrow buttons.</p>
+      <p>Travel through spacetime and avoid the asteroids</p>
+      <p>Move your bed using the left and right arrow buttons</p>
+      <button id="start-button" class="gameStartButtons">Start Game</button>
+
     </div>
 
     <div class="game-board">
@@ -24,10 +26,14 @@
 
     <div class="game-over">
       <h1>Game Over!</h1>
+      <h2>You scored <span id="score"></span> points</h2>
       <p>Go to bed, or press the restart button</p>
-      <button id="restart-button">Restart Game</button>
+      <button id="restart-button" class="gameStartButtons">Restart Game</button>
     </div>
 
+    <div class="sound-buttons">
+      <button id="mute-button">Mute Music</button>
+    </div>
 
 
     <script type="text/javascript" src="js/main.js"></script>

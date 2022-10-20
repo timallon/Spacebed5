@@ -1,3 +1,11 @@
+body {
+  background-color: #042227;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0;
+}
+
 canvas {
     border: 100px solid red;
     display: none;
@@ -6,16 +14,43 @@ canvas {
   .game-over {
     display: none;
   }
-/*
-    .game-intro, .game-board, .game-over {
+
+    .game-intro, .game-over {
 
     display: flex;
     background-image: url('images/background.png');
     background-size:cover;
     align-items: center;
     text-align: center; 
+    font-size: 3em;
+    font-family: 'ArcadeClassic', sans-serif;
+    word-spacing: 5px;
+    color: #A8B6FF;
     height: 100%;
     width: 100%;
     justify-content: center;
     flex-direction: column;
+  }
+
+
+/*
+  #start-button {
+    font-size: 1em;
+    font-family: 'ArcadeClassic', sans-serif;
+    color: #A8B6FF;
+    background-color: black;
+   }
+ 
+*/
+  
+  .gameStartButtons {
+    font-size: 1em;
+    font-family: 'ArcadeClassic', sans-serif;
+    color: #042227;
+    background-color: #A8B6FF;
+    border-radius: 20px;
+    box-shadow: 4px 4px 5px black;
+    
+
+
   }
