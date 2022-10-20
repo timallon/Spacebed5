@@ -10,16 +10,25 @@
   </head>
   <body>
     <div class="game-intro">
-      <!--img src="images/background.png" alt="" class="background-image" /-->
+      <h1 class="title">Asteroid Explosion</h1>
       <br />
-      <button id="start-button">StartGame</button>
+      <button id="start-button">Start Game</button>
       <p>Move the bed using the left and right arrow buttons.</p>
-      <!--img src="./images/arrows.png" alt="" class="arrows-img" /-->
     </div>
 
-    <div id="game-board">
-      <canvas id="canvas" width="800" height="930"></canvas>
+    <div class="game-board">
+      <canvas id="canvas" width="800" height="1000"></canvas>
     </div>
+
+ 
+
+    <div class="game-over">
+      <h1>Game Over!</h1>
+      <p>Go to bed, or press the restart button</p>
+      <button id="restart-button">Restart Game</button>
+    </div>
+
+
 
     <script type="text/javascript" src="js/main.js"></script>
   </body>

@@ -1,4 +1,5 @@
 const canvas = document.querySelector("canvas");
+const gameOver = document.querySelector(".game-over");
 canvas.style.border = "5px solid black";
 const ctx = canvas.getContext("2d");
 const startScreen = document.querySelector(".game-intro");
@@ -26,29 +27,44 @@ let score = 0;
 let point = 0;
 let speedRatio = 0
 
-const meteor1Arr = [
+let meteor1Arr = [
     { x: Math.floor(Math.random() * 660) + 1, y: -120 , img: meteor1 },
     { x: Math.floor(Math.random() * 660) + 1, y: -470, img: meteor1 },
     { x: Math.floor(Math.random() * 660) + 1, y: -820, img: meteor1 },
     { x: Math.floor(Math.random() * 660) + 1, y: -1170, img: meteor1 },
-    
-    
 ]
 
 //add song
 //const song = new Audio("audio/deedee.mp3");
 //song.volume = 0.5;
 
-
-
-//variables
+//variables:
 function random() {
     return Math.floor(Math.random() * 660) + 20
 }
 
 window.onload = () => {
     ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
+    gameOver.style.display = "none";
+    canvas.style.display = "none";
+
     document.getElementById('start-button').onclick = () => {
+      startScreen.style.display = "none";
+      canvas.style.display = "block";
+      startGame();
+    }
+
+    document.getElementById("restart-button").onclick = () => {
+      gameOver.style.display = "none";
+      canvas.style.display = "block";
+      isGameOver = false;
+      score = 0;
+      meteor1Arr = [
+        { x: Math.floor(Math.random() * 660) + 1, y: -120 , img: meteor1 },
+        { x: Math.floor(Math.random() * 660) + 1, y: -470, img: meteor1 },
+        { x: Math.floor(Math.random() * 660) + 1, y: -820, img: meteor1 },
+        { x: Math.floor(Math.random() * 660) + 1, y: -1170, img: meteor1 },
+    ]
       startGame();
     }
 
@@ -62,7 +78,9 @@ window.onload = () => {
 
         gameId = requestAnimationFrame(startGame);
         if (isGameOver === true) {
-            cancelAnimationFrame(gameId)
+            cancelAnimationFrame(gameId);
+            gameOver.style.display = "block";
+            canvas.style.display = "none";
         }
         //console.log(gameId)
         if (moveRight === true && bedX < canvasWidth * 0.9) {
@@ -95,25 +113,10 @@ window.onload = () => {
               ) {
                 isGameOver = true;} else {
                 }
-            /*if (current.y % 30 === 0) {
-                console.log("meteor test")
-            }*/
         }
-        
-            /*let meteor1Y = meteor1Arr.forEach(element => element.y);
-            console.log(meteor1Y)*/
 
-        
-        
-        //define object collision:
-        
-        /*
-          }*/
-
-    
     //song.play(); 
     }
-    // 
     document.addEventListener("keydown", (event) => {
         if (event.code === "ArrowRight") {
         console.log("right arrow pressed");
@@ -128,6 +131,11 @@ window.onload = () => {
         moveRight = false;
         moveLeft = false;
       });
-    
-     
 }
+/*
+function gameOver () {
+  song.pause();
+  explosion.play();
+  gameOver.style.display = "flex";
+}
+*/

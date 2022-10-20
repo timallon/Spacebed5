@@ -1,4 +1,21 @@
 canvas {
-    border: 1px solid red;
+    border: 100px solid red;
+    display: none;
   }
-  
+
+  .game-over {
+    display: none;
+  }
+/*
+    .game-intro, .game-board, .game-over {
+
+    display: flex;
+    background-image: url('images/background.png');
+    background-size:cover;
+    align-items: center;
+    text-align: center; 
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+  }
