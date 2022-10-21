@@ -59,7 +59,16 @@ canvas {
     background-color: #A8B6FF;
     border-radius: 50px;
     box-shadow: 4px 4px 5px #A8B6FF;
-    
+  }
+  @-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
 
-
+  #dylan2 {
+    -webkit-animation: rotating 2s linear infinite;
   }
