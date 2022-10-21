@@ -90,6 +90,7 @@ window.onload = () => {
       startScreen.style.display = "none";
       ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
       ctx.drawImage(bed, bedX, bedY, canvasWidth * 0.1, canvasHeight * 0.1);
+      ctx.clearRect(bedX + (bed.width/18), bedY, bed.width * 0.055, bedHeight)
       ctx.drawImage(dylanSmile, bedX + (bed.width/18), bedY, bed.width * 0.055, bedHeight)
       
       

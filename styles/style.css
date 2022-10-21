@@ -19,13 +19,15 @@ canvas {
     .game-intro, .game-over {
 
     
-    background-image: url("../images/background.png");
+    background-image: url("../images/background-horizontal.png");
     background-size:cover;
+    object-fit: fill;
+    
     align-items: center;
     text-align: center; 
     font-size: 3em;
     font-family: 'ArcadeClassic', sans-serif;
-    src: url("../fonts/ARCADECLASSIC.TTF");
+/*    src: url("../fonts/ARCADECLASSIC.TTF");*/
     word-spacing: 5px;
     color: #A8B6FF;
     height: 100%;
