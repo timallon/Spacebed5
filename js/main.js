@@ -107,7 +107,6 @@ window.onload = () => {
           bedX -= canvasWidth * 0.01 * (1 + score/2000);
         }
       
-
       for (let i = 0; i < meteor1Arr.length; i += 1) {
           let current = meteor1Arr[i];
           ctx.font = '48px ArcadeClassic';
