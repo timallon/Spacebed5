@@ -15,15 +15,13 @@ canvas {
     border: 100px solid red;
     display: none;
   }
-
+  
   .game-over {
     display: none;
     
   }
 
-    .game-intro, .game-over {
-
-    
+  .game-intro, .game-over {
     background-image: url("../images/background-horizontal.png");
     background-size:cover;
     object-fit: fill;
@@ -32,13 +30,12 @@ canvas {
     text-align: center; 
     font-size: 3em;
     font-family: 'ArcadeClassic', sans-serif;
-    word-spacing: 5px;
+    word-spacing: 6px;
     color: #A8B6FF;
     height: 100%;
     width: 100%;
     justify-content: center;
     flex-direction: column;
-    
   }
 
 
@@ -72,3 +69,21 @@ canvas {
   #dylan2 {
     animation: rotating 2s linear infinite;
   }
+
+  #mute-button {
+    position: relative;
+    z-index: 10;
+    height: 50px;
+    width: 130px;
+    font-size: 28px;
+    border-radius: 50px;
+    background-color: #A8B6FF;
+    color: #042227;
+    box-shadow: 4px 4px 5px #A8B6FF;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    transition: all 1s ease-in-out;
+    font-family: 'ArcadeClassic', sans-serif;
+    align-items: center;
+  }
+
