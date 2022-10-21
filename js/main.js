@@ -91,7 +91,7 @@ window.onload = () => {
       ctx.drawImage(background, 0, 0, canvasWidth, canvasHeight);
       ctx.drawImage(bed, bedX, bedY, canvasWidth * 0.1, canvasHeight * 0.1);
       ctx.clearRect(bedX + (bed.width/18), bedY, bed.width * 0.055, bedHeight)
-      ctx.drawImage(dylanSmile, bedX +  (bed.width/18), bedY, bed.width * 0.055, bedHeight)
+      //ctx.drawImage(dylanSmile, bedX +  (bed.width/18), bedY, bed.width * 0.055, bedHeight)
       
       
       gameId = requestAnimationFrame(startGame);
@@ -134,7 +134,7 @@ window.onload = () => {
               song.pause();
               song.currentTime = 0;
               scoreElement.innerText = score;
-              song.preservesPitch = true;
+              //song.preservesPitch = true;
               song.playbackRate= 1;
 
             
