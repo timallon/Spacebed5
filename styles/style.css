@@ -6,6 +6,11 @@ body {
   padding: 0;
 }
 
+h1 {
+  margin: 0px;
+  padding: 0;
+}
+
 canvas {
     border: 100px solid red;
     display: none;
@@ -27,7 +32,6 @@ canvas {
     text-align: center; 
     font-size: 3em;
     font-family: 'ArcadeClassic', sans-serif;
-/*    src: url("../fonts/ARCADECLASSIC.TTF");*/
     word-spacing: 5px;
     color: #A8B6FF;
     height: 100%;
