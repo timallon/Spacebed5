@@ -1,7 +1,30 @@
-# spacebed5
+Spacebed 5
 
-Player (uploadable profile) lying on top of bad flying through the stars. The goal is to avoid asteroids or planets or both (jpegs) and to hit or shoot evil aliens. You gain points by avoiding asteroids and killing aliens. It speeds up gradually. The game is over when all lives are lost, each time you hit a planet. Obstacles can come at angles
-Music: Dee Dee. Maybe change graphic on alien explosion.
-Control with left and right arrow keys, maybe x for firing.
+https://timallon.github.io/Spacebed5/
 
-Backlog: sound effects, change graphic on impact
+Dodge 'em game. Player is lying on a bed and accelerating through space, trying to avoid the asteroids. Everything accelerates, including the music and the L+R controls, as the game progresses, until a crash becomes inevitable. The object is to avoid as many asteroids as possible so achieving as high as core as possible.
+
+MVP:
+Splash screen
+Main screen
+Restart screen
+Collision defined
+Acceleration implemented
+Score visible on main screen and restart screen
+Pause function
+Mute sound effects
+
+Backlog:
+Different obstacles
+Aliens to shoot or colide with for additional points
+Improve visuals
+
+Data structure:
+Bit ad hoc and piecemeal: would probably require a rewrite
+
+States:
+The only states are the listed screens
+
+Backlog:
+Better visuals
+Additional obstacles / aliens
